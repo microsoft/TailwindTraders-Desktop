@@ -1,0 +1,51 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28315.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouponReader.Core.Common", "CouponReader.Core.Common\CouponReader.Core.Common.csproj", "{9F3D84C1-E358-438F-819C-C2A3AFD41030}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{5CF01A23-DBCD-47EF-B6AC-F40205850600}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DB738021-55D5-4008-96D7-0A0ADA0D557F}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		NuGet.config = NuGet.config
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{761D5854-6F19-4097-B0A9-B66F2CB26F45}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouponReader.UnitTests", "CouponReader.UnitTests\CouponReader.UnitTests.csproj", "{BC39A56C-073D-49A2-9B4F-8F098A27AA60}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CouponReader.Core.WindowsForms", "CouponReader.Core.Forms\CouponReader.Core.WindowsForms.csproj", "{AF913F73-55C3-413E-A927-75D32B79BCE7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9F3D84C1-E358-438F-819C-C2A3AFD41030}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3D84C1-E358-438F-819C-C2A3AFD41030}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3D84C1-E358-438F-819C-C2A3AFD41030}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3D84C1-E358-438F-819C-C2A3AFD41030}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC39A56C-073D-49A2-9B4F-8F098A27AA60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC39A56C-073D-49A2-9B4F-8F098A27AA60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC39A56C-073D-49A2-9B4F-8F098A27AA60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC39A56C-073D-49A2-9B4F-8F098A27AA60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF913F73-55C3-413E-A927-75D32B79BCE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF913F73-55C3-413E-A927-75D32B79BCE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF913F73-55C3-413E-A927-75D32B79BCE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF913F73-55C3-413E-A927-75D32B79BCE7}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9F3D84C1-E358-438F-819C-C2A3AFD41030} = {5CF01A23-DBCD-47EF-B6AC-F40205850600}
+		{BC39A56C-073D-49A2-9B4F-8F098A27AA60} = {761D5854-6F19-4097-B0A9-B66F2CB26F45}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {264B945D-0967-4D4D-B7F5-C5A8650582D0}
+	EndGlobalSection
+EndGlobal

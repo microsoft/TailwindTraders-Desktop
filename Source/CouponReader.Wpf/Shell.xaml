@@ -1,0 +1,17 @@
+﻿<Window xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:prism="http://prismlibrary.com/"
+        xmlns:regions="clr-namespace:CouponReader.Wpf.Module;assembly=CouponReader.Wpf.Module"
+        x:Class="CouponReader.Wpf.Shell"
+        mc:Ignorable="d"
+        Title="Tailwind Traders Coupon Reader"
+        Height="600"
+        Width="1000"
+        prism:ViewModelLocator.AutoWireViewModel="True">
+    <Grid>
+        <ContentControl 
+            prism:RegionManager.RegionName="{x:Static regions:RegionNames.ContentRegion}" />
+    </Grid>
+</Window>

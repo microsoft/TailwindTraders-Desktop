@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F8FCBE59-4D67-40F6-894F-A49F69ED954A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>WPFNetFX</RootNamespace>
+    <AssemblyName>WPFNetFX</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="..\CouponReader.Common\Controls\CouponDetailsControl.xaml">
+      <Link>CouponDetailsControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\CouponReader.Common\Controls\CouponsHistoryControl.xaml">
+      <Link>CouponsHistoryControl.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="..\CouponReader.Wpf.Core.Module\Views\MainView.xaml">
+      <Link>MainView.xaml</Link>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="..\CouponReader.Common\Controls\CouponDetailsControl.xaml.cs">
+      <Link>CouponDetailsControl.xaml.cs</Link>
+      <DependentUpon>CouponDetailsControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Controls\CouponsHistoryControl.xaml.cs">
+      <Link>CouponsHistoryControl.xaml.cs</Link>
+      <DependentUpon>CouponsHistoryControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Converters\BoolToVisibilityConverter.cs">
+      <Link>BoolToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Converters\InverseBoolToVisibilityConverter.cs">
+      <Link>InverseBoolToVisibilityConverter.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Helpers\MapControlHelper.cs">
+      <Link>MapControlHelper.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Models\Coupon.cs">
+      <Link>Coupon.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Models\CouponHistory.cs">
+      <Link>CouponHistory.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Services\CouponsService.cs">
+      <Link>CouponsService.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\Settings.cs">
+      <Link>Settings.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Common\ViewModels\CouponViewModel.cs">
+      <Link>CouponViewModel.cs</Link>
+    </Compile>
+    <Compile Include="..\CouponReader.Wpf.Core.Module\Views\MainView.xaml.cs">
+      <Link>MainView.xaml.cs</Link>
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls">
+      <Version>5.1.0-build.14.g97c3f5c88d</Version>
+    </PackageReference>
+    <PackageReference Include="Prism.Wpf">
+      <Version>7.2.0.660-ci</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.0</TargetFramework>  
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Toolkit.Forms.UI.Controls" Version="5.1.0-build.14.g97c3f5c88d" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CouponReader.Core.Common\CouponReader.Core.Common.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="tail.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  
+</Project>

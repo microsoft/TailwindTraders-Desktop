@@ -1,0 +1,10 @@
+Install Azure CLI
+
+az login
+az account set --subscription 5c196113-e15d-481e-88c9-c944e75ad9b9
+.\deploy.ps1
+
+
+
+https://aka.ms/installazurecliwindows
+https://docs.microsoft.com/en-us/azure/sql-database/scripts/sql-database-create-and-configure-database-cli

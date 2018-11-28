@@ -1,0 +1,220 @@
+﻿<UserControl x:Class="CouponReader.Common.Controls.CouponDetailsControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+             xmlns:converters="clr-namespace:CouponReader.Common.Converters"
+             mc:Ignorable="d" 
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <!-- COLORS -->
+            <Color x:Key="AccentColor">#2F4B66</Color>
+            <Color x:Key="BackgroundColor">#F4F6F7</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+
+            <!-- BRUSHES -->
+            <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+            <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
+            <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource WhiteColor}" />
+            <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource BlackColor}" />
+
+            <!-- CONVERTERS -->
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
+
+            <!-- STYLES -->
+            <Style x:Key="CouponInfoTitleStyle" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource BrandonGrotesqueMedium}"/>
+                <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Margin" Value="0, 12, 0, 24"/>
+            </Style>
+
+            <Style x:Key="CouponInfoSubTitleStyle" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource BrandonGrotesqueLight}"/>
+                <Setter Property="Foreground" Value="Gray"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="6"/>
+            </Style>
+
+            <Style x:Key="CouponInfoValueStyle" TargetType="TextBlock">
+                <Setter Property="FontFamily" Value="{StaticResource BrandonGrotesqueMedium}"/>
+                <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="Margin" Value="6"/>
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="FontFamily" 
+                        Value="{StaticResource BrandonGrotesqueMedium}"/>
+                <Setter Property="Foreground" 
+                        Value="{StaticResource WhiteBrush}"/>
+                <Setter Property="VerticalAlignment" 
+                        Value="Center"/>
+                <Setter Property="Height" 
+                        Value="30"/>
+                <Setter Property="Width" 
+                        Value="200"/>
+                <Setter Property="Margin" 
+                        Value="6"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border 
+                                CornerRadius="12" 
+                                Background="{StaticResource AccentBrush}"
+                                BorderBrush="{StaticResource AccentBrush}"
+                                BorderThickness="1">
+                                <ContentPresenter 
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                    Content="{TemplateBinding Content}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    Margin="{TemplateBinding Padding}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="CouponIconInfoStyle" TargetType="Image">
+                <Setter Property="Height" Value="24"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="0, 0, 6, 12"/>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid
+        Background="{StaticResource WhiteBrush}">
+        <!-- COUPON INFO -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel 
+                Grid.Column="0"
+                Orientation="Horizontal"
+                Margin="12">
+                <!-- COUPON INFO -->
+                <StackPanel>
+                    <TextBlock 
+                        Text="Coupon info"
+                        Style="{StaticResource CouponInfoTitleStyle}"/>
+                    <StackPanel 
+                        Orientation="Horizontal">
+                        <StackPanel>
+                            <TextBlock
+                                Text="Title:"
+                                Style="{StaticResource CouponInfoSubTitleStyle}" />
+                            <TextBlock 
+                                Text="User:"
+                                Style="{StaticResource CouponInfoSubTitleStyle}" />
+                            <TextBlock 
+                                Text="Username:"
+                                Style="{StaticResource CouponInfoSubTitleStyle}" />
+                            <TextBlock 
+                                Text="CouponText:"
+                                Style="{StaticResource CouponInfoSubTitleStyle}" />
+                            <TextBlock
+                                Text="Expiration:"
+                                Style="{StaticResource CouponInfoSubTitleStyle}" />
+                        </StackPanel>
+                        <StackPanel>
+                            <TextBlock 
+                                Text="{Binding Title}"
+                                Style="{StaticResource CouponInfoValueStyle}"/>
+                            <TextBlock 
+                                Text="{Binding User}"
+                                Style="{StaticResource CouponInfoValueStyle}" />
+                            <TextBlock 
+                                Text="{Binding Username}"
+                                Style="{StaticResource CouponInfoValueStyle}" />
+                            <TextBlock 
+                                Text="{Binding CouponText}"
+                                Style="{StaticResource CouponInfoValueStyle}" />
+                            <TextBlock 
+                                Text="{Binding Expiration}"
+                                Style="{StaticResource CouponInfoValueStyle}" />
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <!-- COUPON IMAGE -->
+                <StackPanel
+                    Margin="12, 0">
+                    <StackPanel    
+                        Orientation="Horizontal"
+                        Visibility="{Binding ReadyToRedeem, Converter={StaticResource BoolToVisibilityConverter}}">
+                        <Image
+                            Source="pack://application:,,,/Resources/Images/ic_no.png"
+                            Style="{StaticResource CouponIconInfoStyle}"/>
+                        <TextBlock 
+                            Text="Coupon not available"
+                            Style="{StaticResource CouponInfoTitleStyle}"/>
+                    </StackPanel>
+                    <StackPanel      
+                        Orientation="Horizontal"
+                        Visibility="{Binding ReadyToRedeem, Converter={StaticResource InverseBoolToVisibilityConverter}}">
+                        <Image
+                            Source="pack://application:,,,/Resources/Images/ic_ButtonStyle.png"
+                            Style="{StaticResource CouponIconInfoStyle}"/>
+                        <TextBlock 
+                            Text="Coupon valid"
+                            Style="{StaticResource CouponInfoTitleStyle}"/>
+                    </StackPanel>
+                    <Grid
+                        MinWidth="350">
+                        <Image
+                            Source="{Binding CouponImage}"
+                            MaxWidth="400"
+                            Height="200">
+                            <Image.BitmapEffect>
+                                <DropShadowBitmapEffect 
+                                    Color="Black" 
+                                    Direction="320"
+                                    Softness="1" 
+                                    ShadowDepth="5"
+                                    Opacity="0.3" />
+                            </Image.BitmapEffect>
+                        </Image>
+                    </Grid>
+                    <Button 
+                        Content="SHOW SIGNATURE BOARD"
+                        Click="OnShowSignatureBoardClick" 
+                        Visibility="{Binding ReadyToRedeem, Converter={StaticResource InverseBoolToVisibilityConverter}}"
+                        Style="{StaticResource ButtonStyle}"/>
+                </StackPanel>
+                <!-- SIGN -->
+                <StackPanel
+                    x:Name="SignControl"
+                    Grid.Column="1"
+                    Visibility="{Binding ReadyToRedeem, Converter={StaticResource InverseBoolToVisibilityConverter}}"
+                    Margin="12, 0">
+                    <ContentControl 
+                        x:Name="InkToolbarContainer" />
+                    <ContentControl
+                        x:Name="InkCanvasContainer" 
+                        Background="{StaticResource WhiteBrush}"
+                        Height="200"/>
+                    <Button
+                        Content="SAVE SIGNATURE"
+                        Click="OnRedeemClick" 
+                        Style="{StaticResource ButtonStyle}"/>
+                </StackPanel>
+            </StackPanel>
+            <!-- MAP -->
+            <ContentControl 
+                x:Name="MapControlContainer"
+                Grid.Column="1"
+                Visibility="{Binding ReadyToRedeem, Converter={StaticResource BoolToVisibilityConverter}}"
+                Margin="12, 12, 0, 0" />
+        </Grid>
+    </Grid>
+</UserControl>
