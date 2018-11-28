@@ -1,0 +1,47 @@
+﻿<prism:PrismApplication 
+    x:Class="CouponReader.Wpf.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     
+    xmlns:converters="clr-namespace:CouponReader.Common.Converters;assembly=CouponReader.Common"
+    xmlns:prism="http://prismlibrary.com/">
+    <Application.Resources>
+        <ResourceDictionary>
+
+            <!-- COLORS -->
+            <Color x:Key="AccentColor">#2F4B66</Color>
+            <Color x:Key="BackgroundColor">#F4F6F7</Color>
+            <Color x:Key="WhiteColor">#FFFFFF</Color>
+            <Color x:Key="BlackColor">#000000</Color>
+            <Color x:Key="StandardColor">#f4f6f7</Color>
+            <Color x:Key="HoverColor">#f4f6f7</Color>
+            <Color x:Key="PressedColor">#f4f6f7</Color>
+            <Color x:Key="DialogBackgroundColor">#FF666666</Color>
+            <Color x:Key="ScollBarBackgroundStart">#772F4B66</Color>
+            <Color x:Key="ScollBarBackgroundEnd">#992F4B66</Color>
+            
+            <!-- BRUSHES -->
+            <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+            <SolidColorBrush x:Key="BackgroundBrush" Color="{StaticResource BackgroundColor}" />
+            <SolidColorBrush x:Key="WhiteBrush" Color="{StaticResource WhiteColor}" />
+            <SolidColorBrush x:Key="BlackBrush" Color="{StaticResource BlackColor}" />
+            <SolidColorBrush x:Key="StandardBrush" Color="{StaticResource StandardColor}" />
+            <SolidColorBrush x:Key="HoverBrush" Color="{StaticResource HoverColor}" />
+            
+            <LinearGradientBrush x:Key="ScollBarBackgroundBrush" StartPoint="0,0" EndPoint="1,0">
+                <LinearGradientBrush.GradientStops>
+                    <GradientStop Offset="0" Color="{StaticResource ScollBarBackgroundStart}" />
+                    <GradientStop Offset="1" Color="{StaticResource ScollBarBackgroundEnd}" />
+                </LinearGradientBrush.GradientStops>
+            </LinearGradientBrush>
+
+            <!-- CONVERTERS -->
+            <converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+            <converters:InverseBoolToVisibilityConverter x:Key="InverseBoolToVisibilityConverter" />
+            
+            <!-- FONTS -->
+            <FontFamily x:Key="BrandonGrotesqueLight">pack://application:,,,/Resources/Fonts/#Brandon Grotesque Light</FontFamily>
+            <FontFamily x:Key="BrandonGrotesqueMedium">pack://application:,,,/Resources/Fonts/#Brandon Grotesque Medium</FontFamily>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</prism:PrismApplication>

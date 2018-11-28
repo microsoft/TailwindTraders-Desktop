@@ -1,0 +1,102 @@
+{
+  "$schema": "http://schema.management.azure.com/schemas/2014-04-01-preview/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "administratorLogin": {
+      "type": "string",
+      "defaultValue": "tailwindtraders"
+    },
+    "administratorLoginPassword": {
+      "type": "securestring",
+      "defaultValue": "Tailwindtr4ders"
+    },
+    "location": {
+      "type": "string",
+      "defaultValue": "westus2"
+    },
+    "enableATP": {
+      "defaultValue": false,
+      "type": "bool"
+    },
+    "allowAzureIps": {
+      "defaultValue": true,
+      "type": "bool"
+    },
+    "tier": {
+      "type": "string",
+      "defaultValue": "Standard"
+    },
+    "skuName": {
+      "type": "string",
+      "defaultValue": "S0"
+    }
+  },
+  "variables": {
+    "sql_server_name": "[concat('tailwindtraders-desktop-',uniqueString(resourceGroup().id))]",
+    "sql_server_database_name": "[concat('tailwindtraders-desktop-db-',uniqueString(resourceGroup().id))]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Sql/servers",
+      "name": "[variables('sql_server_name')]",
+      "apiVersion": "2015-05-01-preview",
+      "location": "[parameters('location')]",
+      "properties": {
+        "administratorLogin": "[parameters('administratorLogin')]",
+        "administratorLoginPassword": "[parameters('administratorLoginPassword')]",
+        "version": "12.0"
+      },
+      "resources": [
+        {
+          "type": "firewallrules",
+          "name": "AllowAllWindowsAzureIps",
+          "apiVersion": "2014-04-01-preview",
+          "location": "[parameters('location')]",
+          "properties": {
+            "endIpAddress": "255.255.255.255",
+            "startIpAddress": "0.0.0.0"
+          },
+          "dependsOn": [
+            "[concat('Microsoft.Sql/servers/', variables('sql_server_name'))]"
+          ],
+          "condition": "[parameters('allowAzureIps')]"
+        },
+        {
+          "type": "securityAlertPolicies",
+          "name": "Default",
+          "apiVersion": "2017-03-01-preview",
+          "properties": {
+            "state": "Enabled",
+            "disabledAlerts": [],
+            "emailAddresses": [],
+            "emailAccountAdmins": true
+          },
+          "dependsOn": [
+            "[concat('Microsoft.Sql/servers/', variables('sql_server_name'))]"
+          ],
+          "condition": "[parameters('enableATP')]"
+        }
+      ]
+    },
+    {
+      "type": "Microsoft.Sql/servers/databases",
+      "sku": {
+        "name": "[parameters('skuName')]",
+        "tier": "[parameters('tier')]"
+      },
+      "name": "[concat(variables('sql_server_name'), '/', variables('sql_server_database_name'))]",
+      "apiVersion": "2017-10-01-preview",
+      "location": "[parameters('location')]",
+      "properties": {
+        "collation": "SQL_Latin1_General_CP1_CI_AS",
+        "maxSizeBytes": "268435456000",
+        "sampleName": "",
+        "zoneRedundant": false,
+        "licenseType": ""
+      },
+      "dependsOn": [
+        "[concat('Microsoft.Sql/servers/', variables('sql_server_name'))]"
+      ]
+    }
+  ]
+}

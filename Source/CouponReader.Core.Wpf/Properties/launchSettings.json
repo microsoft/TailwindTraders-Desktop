@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "CouponReader.Core.Wpf": {
+      "commandName": "Project"
+    }
+  }
+}

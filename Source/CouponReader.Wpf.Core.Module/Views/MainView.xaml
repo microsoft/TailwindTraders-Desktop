@@ -1,0 +1,323 @@
+﻿<UserControl x:Class="CouponReader.Wpf.Module.Views.MainView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"          
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" 
+             xmlns:prism="http://prismlibrary.com/"
+             prism:ViewModelLocator.AutoWireViewModel="True">
+    <i:Interaction.Triggers>
+        <prism:InteractionRequestTrigger SourceObject="{Binding NotificationRequest}">
+            <prism:PopupWindowAction IsModal="True" CenterOverAssociatedObject="True">
+                <prism:PopupWindowAction.WindowStyle>
+                    <Style TargetType="Window">
+                        <Setter Property="SizeToContent" Value="WidthAndHeight"/>
+                        <Setter Property="ResizeMode" Value="NoResize"/>
+                    </Style>
+                </prism:PopupWindowAction.WindowStyle>
+            </prism:PopupWindowAction>
+        </prism:InteractionRequestTrigger>
+    </i:Interaction.Triggers>
+    <UserControl.Resources>
+        <ResourceDictionary>
+
+            <!-- STORYBOARDS -->
+            <Storyboard x:Key="ShowHistory">
+                <ThicknessAnimation 
+                    Storyboard.TargetProperty="Margin"
+                    From="0,1500,0,0"
+                    To="0,0,0,0" 
+                    DecelerationRatio=".5"
+                    Duration="0:0:1">
+                    <ThicknessAnimation.EasingFunction>
+                        <CubicEase  />
+                    </ThicknessAnimation.EasingFunction>
+                </ThicknessAnimation>
+            </Storyboard>
+
+            <!-- STYLES -->
+            <Style x:Key="HeaderPanelSytle" TargetType="Grid">
+                <Setter Property="Margin" 
+                        Value="12, 6"/>
+            </Style>
+
+            <Style x:Key="LogoStyle" TargetType="Image">
+                <Setter Property="Width" 
+                        Value="150"/>
+                <Setter Property="Margin" 
+                        Value="0, 12, 24, 12"/>
+            </Style>
+
+            <Style x:Key="SearchTextBoxStyle" TargetType="TextBox">
+                <Setter Property="Padding" Value="6"/>
+                <Setter Property="Margin" Value="6, 12"/>
+                <Setter Property="Foreground" Value="{StaticResource AccentBrush}"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="MinHeight" Value="20"/>
+                <Setter Property="MinWidth" Value="250"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type TextBox}">
+                            <Border 
+                                x:Name="Border"
+                                CornerRadius="0"
+                                BorderBrush="LightGray"
+                                BorderThickness="1"
+                                Background="{StaticResource WhiteBrush}">
+                                <ScrollViewer 
+                                    x:Name="PART_ContentHost"
+                                    Focusable="false"
+                                    HorizontalScrollBarVisibility="Hidden"
+                                    VerticalScrollBarVisibility="Hidden"/>
+                            </Border>
+                            <ControlTemplate.Triggers>
+                                <Trigger Property="IsMouseOver" Value="true">
+                                    <Setter Property="BorderBrush" TargetName="Border" Value="{StaticResource BlackBrush}"/>
+                                    <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+                                </Trigger>
+                                <Trigger Property="IsFocused" Value="true">
+                                    <Setter Property="Foreground" Value="{StaticResource BlackBrush}" />
+                                    <Setter Property="BorderBrush" TargetName="Border" Value="{StaticResource BlackBrush}"/>
+                                </Trigger>
+                            </ControlTemplate.Triggers>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="PlaceholderStyle" TargetType="TextBlock">
+                <Setter Property="FontFamily" 
+                        Value="{StaticResource BrandonGrotesqueMedium}"/>
+                <Setter Property="VerticalAlignment" 
+                        Value="Center"/>
+                <Setter Property="HorizontalAlignment" 
+                        Value="Left"/>
+                <Setter Property="Margin" 
+                        Value="14, 0, 0, 0"/>
+                <Setter Property="Visibility" Value="Collapsed"/>
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding Text, ElementName=SearchTermTextBox}" Value="">
+                        <Setter Property="Visibility" Value="Visible"/>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="FontFamily" 
+                        Value="{StaticResource BrandonGrotesqueMedium}"/>
+                <Setter Property="Foreground" 
+                        Value="{StaticResource AccentBrush}"/>
+                <Setter Property="VerticalAlignment" 
+                        Value="Center"/>
+                <Setter Property="Height" 
+                        Value="36"/>
+                <Setter Property="Width" 
+                        Value="140"/>
+                <Setter Property="Margin" 
+                        Value="6"/>
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border 
+                                CornerRadius="18" 
+                                Background="{StaticResource WhiteBrush}"
+                                BorderBrush="LightGray"
+                                BorderThickness="1">
+                                <ContentPresenter 
+                                    ContentTemplate="{TemplateBinding ContentTemplate}" 
+                                    Content="{TemplateBinding Content}" 
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                    Margin="{TemplateBinding Padding}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <Style x:Key="IconButtonStyle" TargetType="Image">
+                <Setter Property="Height" Value="24"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="6, 0, 0, 0"/>
+            </Style>
+
+            <Style x:Key="TextButtonStyle" TargetType="TextBlock">
+                <Setter Property="TextTrimming" Value="CharacterEllipsis"/>
+                <Setter Property="FontSize" Value="14"/>
+                <Setter Property="HorizontalAlignment" Value="Left"/>
+                <Setter Property="VerticalAlignment" Value="Center"/>
+                <Setter Property="Margin" Value="6, 0"/>
+            </Style>
+
+            <Style x:Key="TransparentStyle" TargetType="{x:Type Button}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="Transparent">
+                                <ContentPresenter/>
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid      
+        Background="{StaticResource WhiteBrush}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <!-- HEADER -->
+            <Grid
+                Grid.Row="0"
+                Style="{StaticResource HeaderPanelSytle}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Image
+                    Grid.Column="0"
+                    Source="pack://application:,,,/Resources/Images/logo_horizontal-b.png"
+                    Style="{StaticResource LogoStyle}"/>
+                <Grid  
+                    Grid.Column="1">
+                    <TextBox
+                        x:Name="SearchTermTextBox" 
+                        Text="{Binding Search, Mode=TwoWay}"
+                        Style="{StaticResource SearchTextBoxStyle}">
+                        <TextBox.BitmapEffect>
+                            <DropShadowBitmapEffect 
+                                Color="Black" 
+                                Direction="320" 
+                                Softness="1" 
+                                ShadowDepth="5" 
+                                Opacity="0.2" />
+                        </TextBox.BitmapEffect>
+                    </TextBox>
+                    <TextBlock 
+                        IsHitTestVisible="False"
+                        Text="Enter coupon code" 
+                        Foreground="DarkGray"
+                        Style="{StaticResource PlaceholderStyle}" />
+                </Grid>
+                <Button 
+                    Grid.Column="2"
+                    x:Name="ScanButton"
+                    Style="{StaticResource ButtonStyle}"
+                    Command="{Binding ScanCommand}"
+                    ToolTip="Scan code">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="70" />
+                            </Grid.ColumnDefinitions>
+                            <Image 
+                                Grid.Column="0"
+                                Source="pack://application:,,,/Resources/Images/ic_scan.png"
+                                Style="{StaticResource IconButtonStyle}"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="Scan code"
+                                Style="{StaticResource TextButtonStyle}"/>
+                        </Grid>
+                    </Button.Content>
+                    <Button.BitmapEffect>
+                        <DropShadowBitmapEffect 
+                            Color="Black" 
+                            Direction="320" 
+                            Softness="1" 
+                            ShadowDepth="5" 
+                            Opacity="0.3" />
+                    </Button.BitmapEffect>
+                </Button>
+                <Button 
+                    Grid.Column="3"
+                    x:Name="ClearButton"
+                    Style="{StaticResource ButtonStyle}"
+                    Width="90"
+                    Command="{Binding CleanCommand}"
+                    ToolTip="Clear">
+                    <Button.Content>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="70" />
+                            </Grid.ColumnDefinitions>
+                            <Image 
+                                Grid.Column="0"
+                                Source="pack://application:,,,/Resources/Images/ic_clear.png"
+                                Style="{StaticResource IconButtonStyle}"/>
+                            <TextBlock
+                                Grid.Column="1"
+                                Text="Clear"
+                                Style="{StaticResource TextButtonStyle}"/>
+                        </Grid>
+                    </Button.Content>
+                    <Button.BitmapEffect>
+                        <DropShadowBitmapEffect 
+                            Color="Black" 
+                            Direction="320" 
+                            Softness="1" 
+                            ShadowDepth="5" 
+                            Opacity="0.3" />
+                    </Button.BitmapEffect>
+                </Button>
+                <Button             
+                    Grid.Column="4"
+                    x:Name="HistoryButton"
+                    Style="{StaticResource TransparentStyle}"        
+                    Command="{Binding HistoryCommand}"
+                    ToolTip="History"
+                    Margin="0, 0, 12, 0">
+                    <Button.Content>
+                        <Image 
+                            Grid.Column="0"     
+                            Source="pack://application:,,,/Resources/Images/ic_history.png"
+                            Style="{StaticResource IconButtonStyle}"/>
+                    </Button.Content>
+                    <Button.BitmapEffect>
+                        <DropShadowBitmapEffect 
+                            Color="Black" 
+                            Direction="320" 
+                            Softness="1" 
+                            ShadowDepth="5" 
+                            Opacity="0.3" />
+                    </Button.BitmapEffect>
+                </Button>
+            </Grid>
+            <!-- XAML HOST (Coupon details) -->
+            <ContentControl
+                Grid.Row="1"
+                x:Name="CouponDetails"              
+                Visibility="{Binding IsCouponHistory, Converter={StaticResource InverseBoolToVisibilityConverter}}"/>
+            <!-- XAML HOST (Counpons history) -->
+            <ContentControl
+                Grid.Row="1"
+                x:Name="CouponsHistory"              
+                Visibility="{Binding IsCouponHistory, Converter={StaticResource BoolToVisibilityConverter}}"
+                Margin="0, 1500, 0, 0">
+                <ContentControl.Style>
+                    <Style>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsCouponHistory}" Value="True">
+                                <DataTrigger.EnterActions>
+                                    <BeginStoryboard Storyboard="{StaticResource ShowHistory}" />
+                                </DataTrigger.EnterActions>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </ContentControl.Style>
+            </ContentControl>
+        </Grid>
+    </Grid>
+</UserControl>
