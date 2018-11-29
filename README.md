@@ -11,6 +11,12 @@ TODO: Guide users through getting your code up and running on their own system. 
 # Build and Test
 TODO: Describe and show how to build your code and run the tests. 
 
+# Deploy to Azure
+
+We have added an ARM template so you can automate the creation of the storage account needed for this app.
+
+<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FTailwindTraders-Desktop%2Fmaster%2FDeploy%2Fdeployment.json" target='_blank'><img src="/Deploy/images/deploy-to-azure.png" alt="Deploy to Azure"/></a>
+
 # Contribute
 TODO: Explain how other users and developers can contribute to make your code better. 
 
