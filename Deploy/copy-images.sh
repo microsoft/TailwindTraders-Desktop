@@ -1,7 +1,7 @@
 couponsRg=${TT_COUPONS_RG}
 couponsRegion=${TT_COUPONS_REGION}
 name=${TT_STORAGE_NAME}
-sourcepath="./images"
+sourcepath="../Documents/Images"
 
 function validate {
     valid=1
