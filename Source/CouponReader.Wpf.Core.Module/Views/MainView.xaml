@@ -259,7 +259,7 @@
                                 Style="{StaticResource IconButtonStyle}"/>
                             <TextBlock
                                 Grid.Column="1"
-                                Text="Clear"
+                                Text="Reset"
                                 Style="{StaticResource TextButtonStyle}"/>
                         </Grid>
                     </Button.Content>
