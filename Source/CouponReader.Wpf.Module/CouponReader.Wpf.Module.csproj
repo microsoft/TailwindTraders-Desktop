@@ -86,10 +86,10 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls">
-      <Version>5.0.0</Version>
+      <Version>5.1.0-build.14.g97c3f5c88d</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.XamlHost">
-      <Version>5.0.0</Version>
+      <Version>5.1.0-build.14.g97c3f5c88d</Version>
     </PackageReference>
     <PackageReference Include="Prism.Wpf" Version="7.2.0.660-ci" />
   </ItemGroup>
