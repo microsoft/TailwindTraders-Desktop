@@ -104,13 +104,13 @@
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="Prism.Core">
-      <Version>7.2.0.679-ci</Version>
+      <Version>7.2.0.853-ci</Version>
     </PackageReference>
     <PackageReference Include="Prism.DryIoc">
-      <Version>7.2.0.660-ci</Version>
+      <Version>7.2.0.853-ci</Version>
     </PackageReference>
     <PackageReference Include="Prism.Wpf">
-      <Version>7.2.0.660-ci</Version>
+      <Version>7.2.0.853-ci</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

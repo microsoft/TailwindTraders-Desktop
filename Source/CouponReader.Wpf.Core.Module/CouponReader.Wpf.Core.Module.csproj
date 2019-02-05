@@ -14,12 +14,12 @@
  
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls" Version="5.1.0-build.14.g97c3f5c88d" />
-    <PackageReference Include="Prism.Wpf" Version="7.2.0.660-ci" />
+    <PackageReference Include="Prism.Wpf" Version="7.2.0.853-ci" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Runtime.WindowsRuntime" Version="4.6.0-dev.18570.1" />
-    <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml" Version="4.6.0-dev.18570.1" />
+    <PackageReference Include="System.Runtime.WindowsRuntime" Version="4.6.0-preview.19073.11" />
+    <PackageReference Include="System.Runtime.WindowsRuntime.UI.Xaml" Version="4.6.0-preview.19073.11" />
     <Reference Include="Windows">
       <HintPath>$(MSBuildProgramFiles32)\Windows Kits\10\UnionMetadata\10.0.17763.0\Windows.winmd</HintPath>
       <IsWinMDFile>true</IsWinMDFile>
