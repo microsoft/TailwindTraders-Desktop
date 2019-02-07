@@ -13,7 +13,7 @@
   
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls" Version="5.1.0-build.14.g97c3f5c88d" />
-    <PackageReference Include="Prism.Wpf" Version="7.2.0.660-ci" />
+    <PackageReference Include="Prism.Wpf" Version="7.2.0.904-ci" />
   </ItemGroup>
   
   <ItemGroup>
