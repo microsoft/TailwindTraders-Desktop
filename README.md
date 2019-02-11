@@ -35,7 +35,7 @@ Official Prism releases are available on NuGet. Simply add https://www.myget.org
 These are the base packages for each platform, together with the Prism's Core assembly as a cross-platform PCL.
 
 | Platform | Assembly | Package | NuGet |
-| -------- | -------- | ------- | ------- | ----- |
+| ----------- | ----------- | ---------- | ---------- |
 | PCL | Prism.dll | [Prism.Core][CoreNuGet] | [![CoreNuGetShield]][CoreNuGet] | [![CoreMyGetShield]][CoreMyGet] |
 | WPF | Prism.Wpf.dll | [Prism.Wpf][WpfNuGet] | [![WpfNuGetShield]][WpfNuGet] |
 | DryIoc | Prism.DryIoc.dll | [Prism.DryIoc][DryIocWpfNuGet] | [![DryIocWpfNuGetShield]][DryIocWpfNuGet] |
