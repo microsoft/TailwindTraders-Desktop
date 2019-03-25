@@ -5,6 +5,7 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>tail.ico</ApplicationIcon>
+    <ApplicationManifest>app1.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -18,9 +19,9 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Toolkit.Wpf.UI.Controls" Version="5.1.0-build.14.g97c3f5c88d" />
-    <PackageReference Include="Prism.Core" Version="7.2.0.904-ci" />
-    <PackageReference Include="Prism.DryIoc" Version="7.2.0.904-ci" />
-    <PackageReference Include="Prism.Wpf" Version="7.2.0.904-ci" />
+    <PackageReference Include="Prism.Core" Version="7.2.0.1147-ci" />
+    <PackageReference Include="Prism.DryIoc" Version="7.2.0.1147-ci" />
+    <PackageReference Include="Prism.Wpf" Version="7.2.0.1147-ci" />
   </ItemGroup>
 
   <ItemGroup>

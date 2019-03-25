@@ -127,7 +127,7 @@
       <Version>5.1.0-build.14.g97c3f5c88d</Version>
     </PackageReference>
     <PackageReference Include="Prism.Wpf">
-      <Version>7.2.0.904-ci</Version>
+      <Version>7.2.0.1147-ci</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
