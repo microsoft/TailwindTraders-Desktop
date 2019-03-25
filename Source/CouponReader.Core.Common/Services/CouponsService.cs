@@ -36,7 +36,7 @@ namespace CouponReader.Common.Services
                         Redeemed = false,
                         User = "Annick B. Addison",
                         UserName = "cbaddison1",
-                        ImageUrl = "https://ttdesktopimgdev.blob.core.windows.net/coupons-images/Coupon_1.png",
+                        ImageUrl = "https://tailwindtraders.blob.core.windows.net/desktop/Coupon_1.png",
                         Expiration = DateTime.Now.AddYears(2)
                     },
 
@@ -48,7 +48,7 @@ namespace CouponReader.Common.Services
                         Redeemed = true,
                         User = "Mathew Y. Rosendahl",
                         UserName = "lusi_123",
-                        ImageUrl = "https://ttdesktopimgdev.blob.core.windows.net/coupons-images/Coupon_2.png",
+                        ImageUrl = "https://tailwindtraders.blob.core.windows.net/desktop/Coupon_2.png",
                         Expiration = DateTime.Now.AddYears(2).AddHours(7)
                     },
 
@@ -60,7 +60,7 @@ namespace CouponReader.Common.Services
                         Redeemed = true,
                         User = "Gillian Carter",
                         UserName = "thecarter",
-                        ImageUrl = "https://ttdesktopimgdev.blob.core.windows.net/coupons-images/Coupon_3.png",
+                        ImageUrl = "https://tailwindtraders.blob.core.windows.net/desktop/Coupon_3.png",
                         Expiration = DateTime.Now.AddYears(2).AddHours(6)
                     },
 
@@ -72,7 +72,7 @@ namespace CouponReader.Common.Services
                         Redeemed = true,
                         User = "Jack Bains",
                         UserName = "bains_12345",
-                        ImageUrl = "https://ttdesktopimgdev.blob.core.windows.net/coupons-images/Coupon_4.png",
+                        ImageUrl = "https://tailwindtraders.blob.core.windows.net/desktop/Coupon_4.png",
                         Expiration = DateTime.Now.AddYears(2)
                     },
 
@@ -84,7 +84,7 @@ namespace CouponReader.Common.Services
                         Redeemed = true,
                         User = "Javier Suárez",
                         UserName = "jsuarez",
-                        ImageUrl = "https://ttdesktopimgdev.blob.core.windows.net/coupons-images/Coupon_5.png",
+                        ImageUrl = "https://tailwindtraders.blob.core.windows.net/desktop/Coupon_5.png",
                         Expiration = DateTime.Now.AddYears(2).AddHours(5)
                     }
                 };
