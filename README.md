@@ -2,12 +2,6 @@
 
 <img src="/Documents/Images/Desktop.png" alt="Tailwind Traders Desktop"/>
 
-# Deploy to Azure
-
-We have added an ARM template so you can automate the creation of the resources for this app.
-
-<a href="https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FMicrosoft%2FTailwindTraders-Desktop%2Fmaster%2FDeploy%2Fdeployment.json"><img src="/Documents/Images/deploy-to-azure.png" alt="Deploy to Azure"/></a>
-
 | DevOps | master                                                       | 
 | ----------------- | ------------------------------------------------------------ |
 | Windows           | [![Build status](https://dev.azure.com/tailwindtraders/Desktop/_apis/build/status/Desktop-.NET%20Desktop-CI)](https://dev.azure.com/tailwindtraders/Desktop/_build/latest?definitionId=4) |
