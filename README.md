@@ -6,6 +6,8 @@
 | ----------------- | ------------------------------------------------------------ |
 | Windows           | [![Build status](https://dev.azure.com/tailwindtraders/Desktop/_apis/build/status/Desktop-.NET%20Desktop-CI)](https://dev.azure.com/tailwindtraders/Desktop/_build/latest?definitionId=4) |
 
+Dowload the last build release from [here](https://tailwindtraders.blob.core.windows.net/desktop/TailwindTradersDesktop.zip). 
+
 # Repositories
 
 For this demo reference, we built several consumer and line-of-business applications and a set of backend services. You can find all repositories in the following locations:
@@ -43,7 +45,7 @@ The DesktopWindowXamlSource is the actual instance of your Island content. This 
 
 | NuGet | Description |
 | ------------------------------------- | ------------------------------------------------------------------------- |
-| [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost/) |
+| [Microsoft.Toolkit.Wpf.UI.XamlHost](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.XamlHost/) | This library provides XAML islands helpers for WPF. It is part of the Windows Community Toolkit.
 |[Microsoft.Toolkit.Wpf.UI.Controls](https://www.nuget.org/packages/Microsoft.Toolkit.Wpf.UI.Controls/) | Wrapper classes for 1st party controls, InkCanvas, InkToolbar, MapControl, MediaPlayerElement, all for WPF. |
 
 # Contributing
