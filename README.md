@@ -1,12 +1,18 @@
 # Tailwind Traders Desktop Reference App
 
-<img src="/Documents/Images/Desktop.png" alt="Tailwind Traders Desktop"/>
+![Tailwind Traders Desktop](Documents/Images/Desktop.png)
 
 | DevOps | master                                                       | 
 | ----------------- | ------------------------------------------------------------ |
 | Windows           | [![Build status](https://dev.azure.com/tailwindtraders/Desktop/_apis/build/status/Desktop-.NET%20Desktop-CI)](https://dev.azure.com/tailwindtraders/Desktop/_build/latest?definitionId=4) |
 
 Dowload the last build release from [here](https://tailwindtraders.blob.core.windows.net/desktop/TailwindTradersDesktop.zip). 
+
+# DemoScript
+
+Check out the [Productivity Improvements in Visual Studio 2019](https://github.com/Microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Productivity%20Improvements%20in%20Visual%20Studio%202019) demo script.
+
+<iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR8SMkUX-TIVBhIdeQCM_fI1UQzI4SDRIWFRGUU1aRkpDT1hDSUxKUFNRTyQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
 
 # Repositories
 
@@ -18,10 +24,6 @@ For this demo reference, we built several consumer and line-of-business applicat
 * [Desktop (WinForms & WPF -.NET Core)](https://github.com/Microsoft/TailwindTraders-Desktop)
 * [Rewards (ASP.NET Framework)](https://github.com/Microsoft/TailwindTraders-Rewards)
 * [Mobile (Xamarin Forms 4.0)](https://github.com/Microsoft/TailwindTraders-Mobile)
-
-# Architecture
-
-We use Package references, manage NuGet dependencies directly within project files (as opposed to a separate packages.config file)
 
 ## PRISM
 Prism is a framework for building loosely coupled, maintainable, and testable XAML applications in WPF, Windows 10 UWP, and Xamarin Forms.
