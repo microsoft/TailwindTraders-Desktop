@@ -12,7 +12,8 @@ Dowload the last build release from [here](https://tailwindtraders.blob.core.win
 
 Check out the [Productivity Improvements in Visual Studio 2019](https://github.com/Microsoft/TailwindTraders/tree/master/Documents/DemoScripts/Productivity%20Improvements%20in%20Visual%20Studio%202019) demo script.
 
-<iframe width="640px" height= "480px" src= "https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR8SMkUX-TIVBhIdeQCM_fI1UQzI4SDRIWFRGUU1aRkpDT1hDSUxKUFNRTyQlQCN0PWcu&embed=true" frameborder= "0" marginwidth= "0" marginheight= "0" style= "border: none; max-width:100%; max-height:100vh" allowfullscreen webkitallowfullscreen mozallowfullscreen msallowfullscreen> </iframe>
+# Feedback
+[Help us improving this reference application by providing us your valuable opinion](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR8SMkUX-TIVBhIdeQCM_fI1UQzI4SDRIWFRGUU1aRkpDT1hDSUxKUFNRTyQlQCN0PWcu).
 
 # Repositories
 
