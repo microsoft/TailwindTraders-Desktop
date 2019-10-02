@@ -6,7 +6,7 @@
 | ----------------- | ------------------------------------------------------------ |
 | Windows           | [![Build status](https://dev.azure.com/tailwindtraders/Desktop/_apis/build/status/Desktop-.NET%20Desktop-CI)](https://dev.azure.com/tailwindtraders/Desktop/_build/latest?definitionId=4) |
 
-Dowload the last build release from [here](https://tailwindtraders.blob.core.windows.net/desktop/TailwindTradersDesktop.zip). 
+Download the latest release [here](https://tailwindtradersdesktop.blob.core.windows.net/release/tailwindtradersdesktop/TailwindTradersDesktop.zip ). 
 
 # DemoScript
 
